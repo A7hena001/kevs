@@ -59,13 +59,8 @@ description: A single-page portfolio featuring data science, analytics, machine 
       </div>
 
       <div class="project-carousel" data-autoplay="true">
-        <div class="project-carousel-controls">
-          <button class="carousel-btn" type="button" data-action="prev" aria-label="Show previous project">←</button>
-          <button class="carousel-btn carousel-btn--play" type="button" data-action="toggle-play" aria-label="Pause autoplay">Pause</button>
-          <button class="carousel-btn" type="button" data-action="next" aria-label="Show next project">→</button>
-        </div>
-
         <div class="project-viewport">
+          <button class="carousel-arrow carousel-arrow--prev" type="button" data-action="prev" aria-label="Show previous project">‹</button>
           <div class="project-track">
             <article class="project-card project-slide">
               <div class="project-meta">Statistical Analysis & OLS Regression</div>
@@ -137,6 +132,11 @@ description: A single-page portfolio featuring data science, analytics, machine 
               </ul>
             </article>
           </div>
+          <button class="carousel-arrow carousel-arrow--next" type="button" data-action="next" aria-label="Show next project">›</button>
+        </div>
+
+        <div class="project-carousel-controls">
+          <button class="carousel-btn carousel-btn--play" type="button" data-action="toggle-play" aria-label="Pause autoplay">Pause</button>
         </div>
       </div>
     </section>
