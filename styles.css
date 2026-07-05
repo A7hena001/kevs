@@ -235,15 +235,18 @@ h1 {
 .project-track {
   display: flex;
   transition: transform 0.5s ease;
+  width: 100%;
 }
 
 .project-slide {
-  min-width: 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
 .project-card {
   border-radius: 1rem;
   padding: 1.2rem 1.25rem;
+  min-height: 100%;
 }
 
 .project-meta {

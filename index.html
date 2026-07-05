@@ -175,6 +175,12 @@ description: A single-page portfolio featuring data science, analytics, machine 
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
     };
 
+    const updatePlayButton = () => {
+      if (!playPauseButton) return;
+      playPauseButton.textContent = autoplayEnabled ? 'Pause' : 'Play';
+      playPauseButton.setAttribute('aria-label', autoplayEnabled ? 'Pause autoplay' : 'Start autoplay');
+    };
+
     const resetAutoplay = () => {
       clearInterval(autoplayTimer);
       if (!autoplayEnabled) return;
@@ -185,7 +191,7 @@ description: A single-page portfolio featuring data science, analytics, machine 
 
     const toggleAutoplay = () => {
       autoplayEnabled = !autoplayEnabled;
-      playPauseButton.textContent = autoplayEnabled ? 'Pause' : 'Play';
+      updatePlayButton();
       if (autoplayEnabled) {
         resetAutoplay();
       } else {
@@ -205,6 +211,7 @@ description: A single-page portfolio featuring data science, analytics, machine 
 
     playPauseButton?.addEventListener('click', toggleAutoplay);
 
+    updatePlayButton();
     updateCarousel(0);
     resetAutoplay();
   }
