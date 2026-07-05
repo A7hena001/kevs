@@ -58,9 +58,8 @@ description: A single-page portfolio featuring data science, analytics, machine 
         <h2>Projects that blend rigor, creativity, and business value.</h2>
       </div>
 
-      <div class="project-carousel" data-autoplay="true">
+      <div class="project-carousel" data-autoplay="false">
         <div class="project-viewport">
-          <button class="carousel-arrow carousel-arrow--prev" type="button" data-action="prev" aria-label="Show previous project">‹</button>
           <div class="project-track">
             <article class="project-card project-slide">
               <div class="project-meta">Statistical Analysis & OLS Regression</div>
@@ -139,12 +138,10 @@ description: A single-page portfolio featuring data science, analytics, machine 
               <a class="project-link" href="{{ '/sentiment-classification-word2vec.html' | relative_url }}" target="_blank" rel="noopener noreferrer">Open case study</a>
             </article>
           </div>
-          <button class="carousel-arrow carousel-arrow--next" type="button" data-action="next" aria-label="Show next project">›</button>
         </div>
 
         <div class="project-carousel-controls">
           <button class="carousel-btn" type="button" data-action="prev" aria-label="Show previous project">← Prev</button>
-          <button class="carousel-btn carousel-btn--play" type="button" data-action="toggle-play" aria-label="Pause autoplay">Pause</button>
           <button class="carousel-btn" type="button" data-action="next" aria-label="Show next project">Next →</button>
         </div>
       </div>
@@ -172,11 +169,8 @@ description: A single-page portfolio featuring data science, analytics, machine 
     const slides = Array.from(carousel.querySelectorAll('.project-slide'));
     const prevButton = carousel.querySelector('[data-action="prev"]');
     const nextButton = carousel.querySelector('[data-action="next"]');
-    const playPauseButton = carousel.querySelector('[data-action="toggle-play"]');
 
     let currentIndex = 0;
-    let autoplayEnabled = true;
-    let autoplayTimer = null;
 
     const updateCarousel = (index = currentIndex) => {
       if (!slides.length) return;
@@ -184,51 +178,14 @@ description: A single-page portfolio featuring data science, analytics, machine 
       track.style.transform = `translateX(-${currentIndex * 100}%)`;
     };
 
-    const updatePlayButton = () => {
-      if (!playPauseButton) return;
-      playPauseButton.textContent = autoplayEnabled ? 'Pause' : 'Play';
-      playPauseButton.setAttribute('aria-label', autoplayEnabled ? 'Pause autoplay' : 'Start autoplay');
-    };
-
-    const stopAutoplay = () => {
-      if (autoplayTimer) {
-        clearInterval(autoplayTimer);
-        autoplayTimer = null;
-      }
-    };
-
-    const startAutoplay = () => {
-      stopAutoplay();
-      if (!autoplayEnabled) return;
-      autoplayTimer = window.setInterval(() => {
-        updateCarousel(currentIndex + 1);
-      }, 10000);
-    };
-
-    const toggleAutoplay = () => {
-      autoplayEnabled = !autoplayEnabled;
-      updatePlayButton();
-      if (autoplayEnabled) {
-        startAutoplay();
-      } else {
-        stopAutoplay();
-      }
-    };
-
     prevButton?.addEventListener('click', () => {
       updateCarousel(currentIndex - 1);
-      startAutoplay();
     });
 
     nextButton?.addEventListener('click', () => {
       updateCarousel(currentIndex + 1);
-      startAutoplay();
     });
 
-    playPauseButton?.addEventListener('click', toggleAutoplay);
-
-    updatePlayButton();
     updateCarousel(0);
-    startAutoplay();
   }
 </script>
