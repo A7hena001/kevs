@@ -167,7 +167,7 @@ description: A single-page portfolio featuring data science, analytics, machine 
 
     let currentIndex = 0;
     let autoplayEnabled = true;
-    let autoplayTimer;
+    let autoplayTimer = null;
 
     const updateCarousel = (index = currentIndex) => {
       if (!slides.length) return;
@@ -181,10 +181,17 @@ description: A single-page portfolio featuring data science, analytics, machine 
       playPauseButton.setAttribute('aria-label', autoplayEnabled ? 'Pause autoplay' : 'Start autoplay');
     };
 
-    const resetAutoplay = () => {
-      clearInterval(autoplayTimer);
+    const stopAutoplay = () => {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    };
+
+    const startAutoplay = () => {
+      stopAutoplay();
       if (!autoplayEnabled) return;
-      autoplayTimer = setInterval(() => {
+      autoplayTimer = window.setInterval(() => {
         updateCarousel(currentIndex + 1);
       }, 10000);
     };
@@ -193,26 +200,26 @@ description: A single-page portfolio featuring data science, analytics, machine 
       autoplayEnabled = !autoplayEnabled;
       updatePlayButton();
       if (autoplayEnabled) {
-        resetAutoplay();
+        startAutoplay();
       } else {
-        clearInterval(autoplayTimer);
+        stopAutoplay();
       }
     };
 
     prevButton?.addEventListener('click', () => {
       updateCarousel(currentIndex - 1);
-      resetAutoplay();
+      startAutoplay();
     });
 
     nextButton?.addEventListener('click', () => {
       updateCarousel(currentIndex + 1);
-      resetAutoplay();
+      startAutoplay();
     });
 
     playPauseButton?.addEventListener('click', toggleAutoplay);
 
     updatePlayButton();
     updateCarousel(0);
-    resetAutoplay();
+    startAutoplay();
   }
 </script>
