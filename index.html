@@ -58,76 +58,86 @@ description: A single-page portfolio featuring data science, analytics, machine 
         <h2>Projects that blend rigor, creativity, and business value.</h2>
       </div>
 
-      <div class="project-list">
-        <article class="project-card">
-          <div class="project-meta">Statistical Analysis & OLS Regression</div>
-          <h3>Video Game Global Market Strategy</h3>
-          <ul>
-            <li>Modeled global video game sales patterns across decades and regions using OLS regression.</li>
-            <li>Applied ANOVA and chi-square testing to validate genre preferences and guide market targeting.</li>
-            <li>Addressed non-normal residuals and heteroscedasticity to improve strategic reliability.</li>
-          </ul>
-        </article>
+      <div class="project-carousel" data-autoplay="true">
+        <div class="project-carousel-controls">
+          <button class="carousel-btn" type="button" data-action="prev" aria-label="Show previous project">←</button>
+          <button class="carousel-btn carousel-btn--play" type="button" data-action="toggle-play" aria-label="Pause autoplay">Pause</button>
+          <button class="carousel-btn" type="button" data-action="next" aria-label="Show next project">→</button>
+        </div>
 
-        <article class="project-card">
-          <div class="project-meta">Statistical Modeling & Data Science</div>
-          <h3>Cinematic Success & Market Trend Analysis</h3>
-          <ul>
-            <li>Analyzed a 6.4k+ row dataset to explore box office, budget, and IMDb rating relationships.</li>
-            <li>Cleaned, standardized, and filtered outliers to ensure data quality before modeling.</li>
-            <li>Used Pearson correlation to surface non-intuitive trends in audience reception and revenue.</li>
-          </ul>
-        </article>
+        <div class="project-viewport">
+          <div class="project-track">
+            <article class="project-card project-slide">
+              <div class="project-meta">Statistical Analysis & OLS Regression</div>
+              <h3>Video Game Global Market Strategy</h3>
+              <ul>
+                <li>Modeled global video game sales patterns across decades and regions using OLS regression.</li>
+                <li>Applied ANOVA and chi-square testing to validate genre preferences and guide market targeting.</li>
+                <li>Addressed non-normal residuals and heteroscedasticity to improve strategic reliability.</li>
+              </ul>
+            </article>
 
-        <article class="project-card">
-          <div class="project-meta">Collaborative Data Science</div>
-          <h3>Behavioral Analytics & Clinical Insights</h3>
-          <ul>
-            <li>Translated biomedical cohort data into operational assets for research stakeholders.</li>
-            <li>Built hierarchical visualization frameworks including sunburst and alluvial flow models.</li>
-            <li>Delivered interactive dashboards that clarified complex biomarker patterns.</li>
-          </ul>
-        </article>
+            <article class="project-card project-slide">
+              <div class="project-meta">Statistical Modeling & Data Science</div>
+              <h3>Cinematic Success & Market Trend Analysis</h3>
+              <ul>
+                <li>Analyzed a 6.4k+ row dataset to explore box office, budget, and IMDb rating relationships.</li>
+                <li>Cleaned, standardized, and filtered outliers to ensure data quality before modeling.</li>
+                <li>Used Pearson correlation to surface non-intuitive trends in audience reception and revenue.</li>
+              </ul>
+            </article>
 
-        <article class="project-card">
-          <div class="project-meta">SQL</div>
-          <h3>Relational Database Management & Data Quality Analysis</h3>
-          <ul>
-            <li>Engineered a relational database to analyze character dynamics and franchise trends.</li>
-            <li>Audited missing data and quantified issues such as 24.7% gender and 89.1% wand core gaps.</li>
-            <li>Documented how missing values skewed results and recommended improvements.</li>
-          </ul>
-        </article>
+            <article class="project-card project-slide">
+              <div class="project-meta">Collaborative Data Science</div>
+              <h3>Behavioral Analytics & Clinical Insights</h3>
+              <ul>
+                <li>Translated biomedical cohort data into operational assets for research stakeholders.</li>
+                <li>Built hierarchical visualization frameworks including sunburst and alluvial flow models.</li>
+                <li>Delivered interactive dashboards that clarified complex biomarker patterns.</li>
+              </ul>
+            </article>
 
-        <article class="project-card">
-          <div class="project-meta">Cloud Infrastructure</div>
-          <h3>AWS Serverless Text Processing & Sentiment Analysis</h3>
-          <ul>
-            <li>Architected an asynchronous serverless microservice using AWS Lambda and API Gateway.</li>
-            <li>Built an NLP pipeline for text categorization and high-dimensional feature engineering.</li>
-            <li>Achieved 0.83 precision against mixed-sentiment profiles in benchmark testing.</li>
-          </ul>
-        </article>
+            <article class="project-card project-slide">
+              <div class="project-meta">SQL</div>
+              <h3>Relational Database Management & Data Quality Analysis</h3>
+              <ul>
+                <li>Engineered a relational database to analyze character dynamics and franchise trends.</li>
+                <li>Audited missing data and quantified issues such as 24.7% gender and 89.1% wand core gaps.</li>
+                <li>Documented how missing values skewed results and recommended improvements.</li>
+              </ul>
+            </article>
 
-        <article class="project-card">
-          <div class="project-meta">Computer Vision</div>
-          <h3>YOLOv5 vs. YOLOv8 Performance Evaluation</h3>
-          <ul>
-            <li>Compared anchor-based and anchor-free detection models across 18 trained variants.</li>
-            <li>Evaluated performance on aerial imagery using mAP, precision, and recall metrics.</li>
-            <li>Documented trade-offs that showed YOLOv5 generalized better on limited data.</li>
-          </ul>
-        </article>
+            <article class="project-card project-slide">
+              <div class="project-meta">Cloud Infrastructure</div>
+              <h3>AWS Serverless Text Processing & Sentiment Analysis</h3>
+              <ul>
+                <li>Architected an asynchronous serverless microservice using AWS Lambda and API Gateway.</li>
+                <li>Built an NLP pipeline for text categorization and high-dimensional feature engineering.</li>
+                <li>Achieved 0.83 precision against mixed-sentiment profiles in benchmark testing.</li>
+              </ul>
+            </article>
 
-        <article class="project-card">
-          <div class="project-meta">Natural Language Processing</div>
-          <h3>Sentiment Classification Pipeline with Word2Vec</h3>
-          <ul>
-            <li>Developed a full sentiment pipeline using Word2Vec skip-gram embeddings and logistic regression.</li>
-            <li>Reached 88% accuracy on a 50K-record IMDb review dataset.</li>
-            <li>Performed preprocessing, hyperparameter tuning, and 5-fold cross-validation for robustness.</li>
-          </ul>
-        </article>
+            <article class="project-card project-slide">
+              <div class="project-meta">Computer Vision</div>
+              <h3>YOLOv5 vs. YOLOv8 Performance Evaluation</h3>
+              <ul>
+                <li>Compared anchor-based and anchor-free detection models across 18 trained variants.</li>
+                <li>Evaluated performance on aerial imagery using mAP, precision, and recall metrics.</li>
+                <li>Documented trade-offs that showed YOLOv5 generalized better on limited data.</li>
+              </ul>
+            </article>
+
+            <article class="project-card project-slide">
+              <div class="project-meta">Natural Language Processing</div>
+              <h3>Sentiment Classification Pipeline with Word2Vec</h3>
+              <ul>
+                <li>Developed a full sentiment pipeline using Word2Vec skip-gram embeddings and logistic regression.</li>
+                <li>Reached 88% accuracy on a 50K-record IMDb review dataset.</li>
+                <li>Performed preprocessing, hyperparameter tuning, and 5-fold cross-validation for robustness.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -144,3 +154,58 @@ description: A single-page portfolio featuring data science, analytics, machine 
     </section>
   </main>
 </div>
+
+<script>
+  const carousel = document.querySelector('.project-carousel');
+
+  if (carousel) {
+    const track = carousel.querySelector('.project-track');
+    const slides = Array.from(carousel.querySelectorAll('.project-slide'));
+    const prevButton = carousel.querySelector('[data-action="prev"]');
+    const nextButton = carousel.querySelector('[data-action="next"]');
+    const playPauseButton = carousel.querySelector('[data-action="toggle-play"]');
+
+    let currentIndex = 0;
+    let autoplayEnabled = true;
+    let autoplayTimer;
+
+    const updateCarousel = (index = currentIndex) => {
+      if (!slides.length) return;
+      currentIndex = (index + slides.length) % slides.length;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    };
+
+    const resetAutoplay = () => {
+      clearInterval(autoplayTimer);
+      if (!autoplayEnabled) return;
+      autoplayTimer = setInterval(() => {
+        updateCarousel(currentIndex + 1);
+      }, 10000);
+    };
+
+    const toggleAutoplay = () => {
+      autoplayEnabled = !autoplayEnabled;
+      playPauseButton.textContent = autoplayEnabled ? 'Pause' : 'Play';
+      if (autoplayEnabled) {
+        resetAutoplay();
+      } else {
+        clearInterval(autoplayTimer);
+      }
+    };
+
+    prevButton?.addEventListener('click', () => {
+      updateCarousel(currentIndex - 1);
+      resetAutoplay();
+    });
+
+    nextButton?.addEventListener('click', () => {
+      updateCarousel(currentIndex + 1);
+      resetAutoplay();
+    });
+
+    playPauseButton?.addEventListener('click', toggleAutoplay);
+
+    updateCarousel(0);
+    resetAutoplay();
+  }
+</script>

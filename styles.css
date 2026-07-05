@@ -196,9 +196,49 @@ h1 {
   font-size: clamp(1.4rem, 2.4vw, 2rem);
 }
 
-.project-list {
-  display: grid;
-  gap: 1rem;
+.project-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.project-carousel-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+
+.carousel-btn {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.6rem 0.95rem;
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.carousel-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.carousel-btn--play {
+  min-width: 5.1rem;
+}
+
+.project-viewport {
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.project-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.project-slide {
+  min-width: 100%;
 }
 
 .project-card {
