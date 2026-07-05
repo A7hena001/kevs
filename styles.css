@@ -308,8 +308,49 @@ h1 {
 }
 
 .project-page__hero {
+  position: relative;
+  overflow: hidden;
   padding: 2rem 1.5rem 1.5rem;
   background: linear-gradient(135deg, rgba(87, 242, 154, 0.16), rgba(255, 255, 255, 0.03));
+}
+
+.project-page__hero::before,
+.project-page__hero::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.project-page__hero::before {
+  inset: 0;
+  opacity: 0.35;
+  background-size: cover;
+}
+
+.project-page__hero::after {
+  width: 12rem;
+  height: 12rem;
+  right: -2rem;
+  bottom: -3rem;
+  border-radius: 50%;
+  filter: blur(8px);
+  opacity: 0.45;
+}
+
+.project-page__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .project-page__hero h1 {
@@ -418,31 +459,99 @@ h1 {
 }
 
 .project-page--gaming .project-page__hero {
-  background: linear-gradient(135deg, rgba(255, 125, 125, 0.2), rgba(12, 18, 37, 0.9));
+  background: linear-gradient(135deg, rgba(255, 125, 125, 0.22), rgba(12, 18, 37, 0.96));
+}
+
+.project-page--gaming .project-page__hero::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.18;
+}
+
+.project-page--gaming .project-page__hero::after {
+  background: radial-gradient(circle, rgba(255, 125, 125, 0.45), transparent 68%);
 }
 
 .project-page--cinema .project-page__hero {
-  background: linear-gradient(135deg, rgba(255, 202, 69, 0.22), rgba(31, 22, 10, 0.95));
+  background: linear-gradient(135deg, rgba(255, 202, 69, 0.24), rgba(31, 22, 10, 0.96));
+}
+
+.project-page--cinema .project-page__hero::before {
+  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0 2px, transparent 2px 14px);
+  opacity: 0.2;
+}
+
+.project-page--cinema .project-page__hero::after {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent 70%);
 }
 
 .project-page--clinical .project-page__hero {
   background: linear-gradient(135deg, rgba(139, 215, 255, 0.2), rgba(8, 19, 31, 0.95));
 }
 
+.project-page--clinical .project-page__hero::before {
+  background-image: radial-gradient(circle, rgba(139, 215, 255, 0.24) 0 10px, transparent 11px);
+  background-size: 26px 26px;
+  opacity: 0.26;
+}
+
+.project-page--clinical .project-page__hero::after {
+  background: radial-gradient(circle, rgba(139, 215, 255, 0.4), transparent 70%);
+}
+
 .project-page--database .project-page__hero {
   background: linear-gradient(135deg, rgba(176, 140, 255, 0.2), rgba(24, 16, 39, 0.95));
+}
+
+.project-page--database .project-page__hero::before {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.16;
+}
+
+.project-page--database .project-page__hero::after {
+  background: linear-gradient(135deg, rgba(176, 140, 255, 0.4), transparent 70%);
 }
 
 .project-page--cloud .project-page__hero {
   background: linear-gradient(135deg, rgba(110, 231, 249, 0.2), rgba(7, 22, 32, 0.95));
 }
 
+.project-page--cloud .project-page__hero::before {
+  background-image: radial-gradient(circle at 25% 50%, rgba(255, 255, 255, 0.24) 0 18px, transparent 19px), radial-gradient(circle at 65% 45%, rgba(255, 255, 255, 0.2) 0 14px, transparent 15px);
+  opacity: 0.35;
+}
+
+.project-page--cloud .project-page__hero::after {
+  background: radial-gradient(circle, rgba(110, 231, 249, 0.36), transparent 70%);
+}
+
 .project-page--vision .project-page__hero {
   background: linear-gradient(135deg, rgba(126, 240, 192, 0.2), rgba(8, 27, 24, 0.95));
 }
 
+.project-page--vision .project-page__hero::before {
+  background-image: repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0 2px, transparent 2px 12px);
+  opacity: 0.2;
+}
+
+.project-page--vision .project-page__hero::after {
+  background: radial-gradient(circle, rgba(126, 240, 192, 0.38), transparent 70%);
+}
+
 .project-page--nlp .project-page__hero {
-  background: linear-gradient(135deg, rgba(255, 143, 200, 0.2), rgba(35, 15, 29, 0.95));
+  background: linear-gradient(135deg, rgba(255, 143, 200, 0.22), rgba(35, 15, 29, 0.95));
+}
+
+.project-page--nlp .project-page__hero::before {
+  background-image: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.18) 0 12px, transparent 13px), radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.14) 0 10px, transparent 11px);
+  opacity: 0.28;
+}
+
+.project-page--nlp .project-page__hero::after {
+  background: radial-gradient(circle, rgba(255, 143, 200, 0.35), transparent 70%);
 }
 
 .project-meta {
